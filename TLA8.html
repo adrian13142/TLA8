@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>try</title>
+</head>
+<body>
+    <h1>ACTIVITY</h1>
+    <p id ="year"></p>
+    <p id ="month"></p>
+    <p id ="day"></p>
+    <p id ="hours"></p>
+    <p id ="minutes"></p>
+    <p id ="seconds"></p>
+    <p id = "check"></p>
+    <p>SELECT A COLOR</br>RED, BLUE, GREEN, ORANGE, YELLOW, PURPLE</p>
+    <input id="input" type="text">
+    <button onclick="myFunction()">Select</button>
+    <p id="color"></p>
+
+    <script>
+    //month
+    const months = ["January", "Febuary","March","April","May","June","July", "August", "September", "October", 
+    "November", "December"];
+    const d = new Date();
+    let month = months[d.getMonth()];
+    document.getElementById("month").innerHTML= month; 
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+    const b = new Date();
+    let day = b.getDay()
+    document.getElementById("day").innerHTML = day;
+    const e = new Date();
+    let hour = e.getHours();
+    document.getElementById("hours").innerHTML = hour;
+    const f = new Date();
+    let minute = f.getMinutes();
+    document.getElementById("minutes").innerHTML = minute;
+    const g = new Date();
+    let second = g.getSeconds();
+    document.getElementById("seconds").innerHTML = second;
+    const time = new Date().getHours();
+    let greeting;
+    if (time < 11) {
+        greeting = "Good morning";
+        
+    } else if (time <18 ) {
+        greeting = "Good day"
+    } else {
+        greeting = "Good evening"
+    }
+    document.getElementById("check").innerHTML = greeting;
+    function myFunction() {
+    var text;
+    var colors = document.getElementById("input").value;
+    switch (colors) {
+        case "red":
+            text = "You pick Red";
+            break;
+        case "blue":
+            text = "You pick Blue";
+            break;
+        case "green":
+            text = "You pick Green";
+            break;
+        case "yellow":
+            text = "You pick Yellow";
+            break;
+        case "orange":
+            text = "You pick Orange";
+            break;
+        case "purple":
+            text = "You pick Purple";
+            break;
+        default:
+            text = "ERROR please refer to the choices above.";
+    }
+    document.getElementById("color").innerHTML = text;
+}
+            
+    </script>
+</body>
+</html>
